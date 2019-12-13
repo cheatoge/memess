@@ -21,10 +21,6 @@ class SiteButton extends React.Component {
 }
 
 class SitePicker extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-
   render() {
     const sites = this.props.sites
     let siteButtons = []
