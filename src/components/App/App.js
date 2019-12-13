@@ -108,7 +108,10 @@ class App extends React.Component {
         />
         {
           currentUrl.length > 0 &&
-          <MemesPage memes={this.state.memes} />
+          <MemesPage
+            memes={this.state.memes}
+            siteName={this.state.site.name}
+          />
         }
       </>
     )

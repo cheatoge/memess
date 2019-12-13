@@ -2,9 +2,10 @@ import React from 'react';
 
 class Meme extends React.Component {
   render() {
+    const meme = this.props.meme
     return (
       <div>
-        <p>Tytuł</p>
+        <h3>{meme.title}</h3>
       </div>
     )
   }

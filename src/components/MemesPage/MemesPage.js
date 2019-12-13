@@ -3,9 +3,22 @@ import Meme from '../Meme/Meme';
 
 class MemesPage extends React.Component {
   render() {
+    const memes = this.props.memes
+    const preparedMemes = []
+    memes.forEach(memeJson => {
+      preparedMemes.push(
+        <Meme
+          key={memeJson.view_url}
+          meme={memeJson}
+        />
+      )
+    });
     return (
       <div>
-        {this.props.memes[0].title}
+        <h2>{this.props.siteName}</h2>
+        <div>
+          {preparedMemes}
+        </div>
       </div>
     )
   }
