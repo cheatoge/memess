@@ -1,51 +1,8 @@
 import React from 'react';
 import logo from '../../logo.svg';
+import SitePicker from '../SitePicker/SitePicker.js'
 import MemesPage from '../MemesPage/MemesPage.js';
 import { API_URL, HOME_SITE, SITES } from './Config';
-
-
-class SiteButton extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.handleClick = this.handleClick.bind(this)
-  }
-
-  handleClick(event) {
-    this.props.onSiteSelected(this.props.site)
-  }
-
-  render() {
-    return <button
-      value={this.props.site}
-      onClick={this.handleClick}>
-      {this.props.site.name}
-    </button>
-  }
-}
-
-class SitePicker extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-
-  render() {
-    const sites = this.props.sites
-    let siteButtons = []
-
-    sites.forEach(site => {
-      siteButtons.push(
-        <SiteButton
-          key={site.url}
-          site={site}
-          onSiteSelected={this.props.onSiteSelected}
-        />
-      )
-    })
-
-    return <div>{siteButtons}</div>
-  }
-}
 
 class App extends React.Component {
   constructor(props) {
