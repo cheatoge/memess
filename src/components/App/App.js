@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from '../../logo.svg';
 import MemesPage from '../MemesPage/MemesPage.js';
-import {HOME_SITE, SITES} from './Config';
+import { API_URL, HOME_SITE, SITES } from './Config';
 
 
 class SiteButton extends React.Component {
@@ -16,8 +16,7 @@ class SiteButton extends React.Component {
   }
 
   render() {
-    return <button 
-      key={this.props.site.url}
+    return <button
       value={this.props.site}
       onClick={this.handleClick}>
       {this.props.site.name}
@@ -37,12 +36,13 @@ class SitePicker extends React.Component {
     sites.forEach(site => {
       siteButtons.push(
         <SiteButton
+          key={site.url}
           site={site}
           onSiteSelected={this.props.onSiteSelected}
         />
       )
     })
-    
+
     return <div>{siteButtons}</div>
   }
 }
@@ -56,13 +56,15 @@ class App extends React.Component {
       memes: []
     }
 
-    this.fetchMemes = this.fetchMemes.bind(this)
+    this.fetchMemesData = this.fetchMemesData.bind(this)
+    this.onHomeSiteSelected = this.onHomeSiteSelected.bind(this)
+    this.onMemesSiteSelected = this.onMemesSiteSelected.bind(this)
     this.onSiteSelected = this.onSiteSelected.bind(this)
   }
 
-  async fetchMemes(url) {
-    console.log("Fetching memes")
-    const json = await fetch("http://api.12345.pl/jbzd")
+  async fetchMemesData(url) {
+    const memesUrl = `${API_URL}/${url}`
+    const json = await fetch(memesUrl)
       .then(response => {
         return response.json()
       })
@@ -70,26 +72,43 @@ class App extends React.Component {
     return json
   }
 
-  onSiteSelected(site) {
-    const memes = this.fetchMemes(site.url)
+  onHomeSiteSelected() {
     this.setState({
-      site: site,
-      memes: memes
+      site: HOME_SITE,
+      memes: null
     })
   }
 
-  render () {
+  onMemesSiteSelected(site) {
+    const json = this.fetchMemesData(site.url)
+      .then(json => {
+        this.setState({
+          site: site,
+          memes: json.memes
+        })
+      })
+  }
+
+  onSiteSelected(site) {
+    if (site.url == HOME_SITE.url) {
+      this.onHomeSiteSelected()
+    } else {
+      this.onMemesSiteSelected(site)
+    }
+  }
+
+  render() {
     const currentUrl = this.state.site.url
 
     return (
       <>
-        <SitePicker 
+        <SitePicker
           sites={SITES}
           onSiteSelected={this.onSiteSelected}
         />
         {
           currentUrl.length > 0 &&
-          <MemesPage memes={this.state.memes}/>
+          <MemesPage memes={this.state.memes} />
         }
       </>
     )

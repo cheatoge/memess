@@ -5,7 +5,7 @@ class MemesPage extends React.Component {
   render() {
     return (
       <div>
-        <Meme />
+        {this.props.memes[0].title}
       </div>
     )
   }

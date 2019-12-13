@@ -1,3 +1,5 @@
+const API_URL = 'http://api.12345.pl'
+
 const HOME_SITE = {
   name: 'Strona główna',
   url: ''
@@ -15,4 +17,4 @@ const SITES = [
   }
 ];
 
-export { HOME_SITE, SITES }
+export { API_URL, HOME_SITE, SITES }
