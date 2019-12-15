@@ -37,7 +37,7 @@ class App extends React.Component {
   }
 
   onMemesSiteSelected(site) {
-    const json = this.fetchMemesData(site.url)
+    this.fetchMemesData(site.url)
       .then(json => {
         this.setState({
           site: site,
