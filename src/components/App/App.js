@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from '../../logo.svg';
+import DataButton from '../Button/DataButton.js'
 import SitePicker from '../SitePicker/SitePicker.js'
 import MemesPage from '../MemesPage/MemesPage.js';
 import { API_URL, HOME_SITE, SITES } from './Config';
@@ -10,13 +11,15 @@ class App extends React.Component {
 
     this.state = {
       site: HOME_SITE,
-      memes: []
+      memes: null,
+      nextPageUrl: null
     }
 
     this.fetchMemesData = this.fetchMemesData.bind(this)
     this.onHomeSiteSelected = this.onHomeSiteSelected.bind(this)
     this.onMemesSiteSelected = this.onMemesSiteSelected.bind(this)
     this.onSiteSelected = this.onSiteSelected.bind(this)
+    this.onNextPageRequested = this.onNextPageRequested.bind(this)
   }
 
   async fetchMemesData(url) {
@@ -32,7 +35,8 @@ class App extends React.Component {
   onHomeSiteSelected() {
     this.setState({
       site: HOME_SITE,
-      memes: null
+      memes: null,
+      nextPageUrl: null
     })
   }
 
@@ -41,7 +45,8 @@ class App extends React.Component {
       .then(json => {
         this.setState({
           site: site,
-          memes: json.memes
+          memes: json.memes,
+          nextPageUrl: json.next_page_url
         })
       })
   }
@@ -54,8 +59,19 @@ class App extends React.Component {
     }
   }
 
+  onNextPageRequested(event, url) {
+    this.fetchMemesData(url)
+    .then(json => {
+      this.setState({
+        memes: json.memes,
+        nextPageUrl: json.next_page_url
+      })
+    })
+  }
+
   render() {
     const currentUrl = this.state.site.url
+    const nextPageUrl = this.state.nextPageUrl
 
     return (
       <>
@@ -69,6 +85,14 @@ class App extends React.Component {
             memes={this.state.memes}
             siteName={this.state.site.name}
           />
+        }
+        { 
+          nextPageUrl != null && 
+          <DataButton
+            text="Następna strona"
+            onClick={this.onNextPageRequested}
+            data={this.state.nextPageUrl}
+          /> 
         }
       </>
     )
