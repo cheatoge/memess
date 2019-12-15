@@ -6,7 +6,7 @@ class Meme extends React.Component {
   render() {
     const meme = this.props.meme
     const content = meme.content
-    debugger
+    
     return (
       <div>
         <h3>{meme.title}</h3>
