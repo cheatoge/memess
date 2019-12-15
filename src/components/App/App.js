@@ -51,7 +51,7 @@ class App extends React.Component {
       })
   }
 
-  onSiteSelected(site) {
+  onSiteSelected(event, site) {
     if (site.url == HOME_SITE.url) {
       this.onHomeSiteSelected()
     } else {
