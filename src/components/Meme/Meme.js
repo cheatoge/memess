@@ -1,6 +1,12 @@
 import React from 'react';
 import ImageMeme from './ImageMeme';
-import { CONTENT_TYPES } from './Config'
+import TextMeme from './TextMeme';
+
+
+const CONTENT_TYPES = {
+  'IMAGE': 'IMAGE',
+  'TEXT': 'TEXT'
+}
 
 class Meme extends React.Component {
   render() {
@@ -14,7 +20,14 @@ class Meme extends React.Component {
           content.contentType === CONTENT_TYPES.IMAGE &&
           <ImageMeme url={content.url} />
         }
-        <p>Komentarzy: {meme.comment_count}</p>
+        {
+          content.contentType === CONTENT_TYPES.TEXT &&
+          <TextMeme text={content.text} />
+        }
+        {
+          meme.comment_count != null &&
+          <p>Komentarzy: {meme.comment_count}</p>
+        }
       </div>
     )
   }
