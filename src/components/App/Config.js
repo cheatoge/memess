@@ -18,6 +18,14 @@ const SITES = [
   {
     name: '9GAG',
     url: '9gag'
+  },
+  {
+    name: 'Demotywatory',
+    url: 'demotywatory'
+  },
+  {
+    name: 'Mistrzowie',
+    url: 'mistrzowie'
   }
 ];
 
