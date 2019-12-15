@@ -14,6 +14,10 @@ const SITES = [
   {
     name: 'jbzd',
     url: 'jbzd'
+  },
+  {
+    name: '9GAG',
+    url: '9gag'
   }
 ];
 
