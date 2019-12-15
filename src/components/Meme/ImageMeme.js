@@ -4,7 +4,7 @@ class ImageMeme extends React.Component {
   render() {
     return (
       <div>
-        <img alt="Image meme" src={this.props.url} />
+        <img alt="meme" src={this.props.url} />
       </div>
     )
   }
