@@ -30,6 +30,7 @@ class Meme extends React.Component {
         break;
 
       default:
+        memeView = <p>Nieobsługiwany format :(</p>
         break;
     }
 
