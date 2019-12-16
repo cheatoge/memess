@@ -20,6 +20,12 @@ class App extends React.Component {
     this.onMemesSiteSelected = this.onMemesSiteSelected.bind(this)
     this.onSiteSelected = this.onSiteSelected.bind(this)
     this.onNextPageRequested = this.onNextPageRequested.bind(this)
+    this.onFetchError = this.onFetchError.bind(this)
+  }
+
+  onFetchError(error) {
+    this.setState({ error: 'Błąd podczas pobierania memów' })
+    console.log(error)
   }
 
   async fetchMemesData(url) {
@@ -27,7 +33,11 @@ class App extends React.Component {
     const json = await fetch(memesUrl)
       .then(response => {
         return response.json()
-      })
+      }).catch(this.onFetchError)
+
+    if (!json || !json.memes) {
+      this.onFetchError('Invalid JSON response')
+    }
 
     return json
   }
@@ -43,6 +53,8 @@ class App extends React.Component {
   onMemesSiteSelected(site) {
     this.fetchMemesData(site.url)
       .then(json => {
+        if (!json) { return }
+
         this.setState({
           site: site,
           memes: json.memes,
@@ -61,12 +73,14 @@ class App extends React.Component {
 
   onNextPageRequested(event, url) {
     this.fetchMemesData(url)
-    .then(json => {
-      this.setState({
-        memes: json.memes,
-        nextPageUrl: json.next_page_url
+      .then(json => {
+        if (!json) { return }
+
+        this.setState({
+          memes: json.memes,
+          nextPageUrl: json.next_page_url
+        })
       })
-    })
   }
 
   render() {
@@ -86,13 +100,22 @@ class App extends React.Component {
             siteName={this.state.site.name}
           />
         }
-        { 
-          nextPageUrl != null && 
+        {
+          nextPageUrl != null &&
           <DataButton
             text="Następna strona"
             onClick={this.onNextPageRequested}
             data={this.state.nextPageUrl}
-          /> 
+          />
+        }
+        {
+          this.state.error != null &&
+          <div>
+            <p>{this.state.error}</p>
+            <button onClick={() => { this.setState({ error: null }) }}>
+              OK
+            </button>
+          </div>
         }
       </>
     )
