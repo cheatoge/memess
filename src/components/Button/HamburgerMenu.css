@@ -1,0 +1,18 @@
+.hamburgerMenu {
+  background: #BB4430;
+  display: inline-block;
+  border: none;
+  position: absolute;
+  right: 10px;
+  top: 14px;
+  padding: 8px;
+  border-radius: 100px;
+  color: white;
+}
+
+.hamburgerBar {
+  width: 22px;
+  height: 3px;
+  margin: 3px 0;
+  background-color: white;
+}

@@ -3,7 +3,9 @@ import logo from '../../logo.svg';
 import DataButton from '../Button/DataButton.js'
 import SitePicker from '../SitePicker/SitePicker.js'
 import MemesPage from '../MemesPage/MemesPage.js';
+import HamburgerMenu from '../Button/HamburgerMenu.js'
 import { API_URL, HOME_SITE, SITES } from './Config';
+import './App.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -11,6 +13,7 @@ class App extends React.Component {
 
     this.state = {
       site: HOME_SITE,
+      showSideBar: false,
       memes: null,
       nextPageUrl: null
     }
@@ -64,6 +67,8 @@ class App extends React.Component {
   }
 
   onSiteSelected(event, site) {
+    this.setState({showSideBar: false})
+
     if (site.url == HOME_SITE.url) {
       this.onHomeSiteSelected()
     } else {
@@ -83,16 +88,26 @@ class App extends React.Component {
       })
   }
 
+  toggleSideBar = () => {
+    this.setState(state => {
+      return {showSideBar: !state.showSideBar}
+    })
+  }
+
   render() {
     const currentUrl = this.state.site.url
     const nextPageUrl = this.state.nextPageUrl
 
     return (
       <>
-        <SitePicker
-          sites={SITES}
-          onSiteSelected={this.onSiteSelected}
-        />
+        <HamburgerMenu onClick={this.toggleSideBar}/>
+        {
+          this.state.showSideBar &&
+          <SitePicker
+            sites={SITES}
+            onSiteSelected={this.onSiteSelected}
+          />
+        }
         {
           currentUrl.length > 0 &&
           <MemesPage
