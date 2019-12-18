@@ -108,30 +108,32 @@ class App extends React.Component {
             onSiteSelected={this.onSiteSelected}
           />
         }
-        {
-          currentUrl.length > 0 &&
-          <MemesPage
-            memes={this.state.memes}
-            siteName={this.state.site.name}
-          />
-        }
-        {
-          nextPageUrl != null &&
-          <DataButton
-            text="Następna strona"
-            onClick={this.onNextPageRequested}
-            data={this.state.nextPageUrl}
-          />
-        }
-        {
-          this.state.error != null &&
-          <div>
-            <p>{this.state.error}</p>
-            <button onClick={() => { this.setState({ error: null }) }}>
-              OK
-            </button>
-          </div>
-        }
+        <div className="wrapper">
+          {
+            currentUrl.length > 0 &&
+            <MemesPage
+              memes={this.state.memes}
+              siteName={this.state.site.name}
+            />
+          }
+          {
+            nextPageUrl != null &&
+            <DataButton
+              text="Następna strona"
+              onClick={this.onNextPageRequested}
+              data={this.state.nextPageUrl}
+            />
+          }
+          {
+            this.state.error != null &&
+            <div>
+              <p>{this.state.error}</p>
+              <button onClick={() => { this.setState({ error: null }) }}>
+                OK
+              </button>
+            </div>
+          }
+        </div>
       </>
     )
   }
