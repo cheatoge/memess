@@ -1,5 +1,6 @@
 import React from 'react';
 import Meme from '../Meme/Meme';
+import './MemesPage.css'
 
 class MemesPage extends React.Component {
   render() {

@@ -3,6 +3,7 @@ import ImageMeme from './ImageMeme';
 import TextMeme from './TextMeme';
 import VideoMeme from './VideoMeme';
 import GalleryMeme from './GalleryMeme';
+import './Meme.css'
 
 const CONTENT_TYPES = {
   IMAGE: 'IMAGE',
@@ -40,8 +41,8 @@ class Meme extends React.Component {
     }
 
     return (
-      <div>
-        <a href={meme.url} target='_blank' rel="noopener noreferrer">
+      <div className='meme'>
+        <a className='memeHeader' href={meme.url} target='_blank' rel="noopener noreferrer">
           <h3>{meme.title}</h3>
         </a>
         {memeView != null && memeView}
