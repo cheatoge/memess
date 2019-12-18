@@ -67,7 +67,7 @@ class App extends React.Component {
   }
 
   onSiteSelected(event, site) {
-    this.setState({showSideBar: false})
+    this.setState({ showSideBar: false })
 
     if (site.url == HOME_SITE.url) {
       this.onHomeSiteSelected()
@@ -90,7 +90,7 @@ class App extends React.Component {
 
   toggleSideBar = () => {
     this.setState(state => {
-      return {showSideBar: !state.showSideBar}
+      return { showSideBar: !state.showSideBar }
     })
   }
 
@@ -100,7 +100,7 @@ class App extends React.Component {
 
     return (
       <>
-        <HamburgerMenu onClick={this.toggleSideBar}/>
+        <HamburgerMenu onClick={this.toggleSideBar} />
         {
           this.state.showSideBar &&
           <SitePicker
@@ -118,11 +118,14 @@ class App extends React.Component {
           }
           {
             nextPageUrl != null &&
-            <DataButton
-              text="Następna strona"
-              onClick={this.onNextPageRequested}
-              data={this.state.nextPageUrl}
-            />
+            <div className="nextPageWrapper">
+              <DataButton
+                style="nextPageButton"
+                text="Następna strona"
+                onClick={this.onNextPageRequested}
+                data={this.state.nextPageUrl}
+              />
+            </div>
           }
           {
             this.state.error != null &&
