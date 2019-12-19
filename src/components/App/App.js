@@ -58,6 +58,7 @@ class App extends React.Component {
       .then(json => {
         if (!json) { return }
 
+        window.scrollTo({ top: 0, behavior: 'smooth' })
         this.setState({
           site: site,
           memes: json.memes,
@@ -74,6 +75,8 @@ class App extends React.Component {
     } else {
       this.onMemesSiteSelected(site)
     }
+
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   onNextPageRequested(event, url) {
@@ -81,6 +84,7 @@ class App extends React.Component {
       .then(json => {
         if (!json) { return }
 
+        window.scrollTo({ top: 0, behavior: 'smooth' })
         this.setState({
           memes: json.memes,
           nextPageUrl: json.next_page_url
