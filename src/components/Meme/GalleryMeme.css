@@ -1,0 +1,11 @@
+.galleryNav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: stretch;
+}
+
+.galleryButton {
+  font-size: 0.7em; 
+  flex: 1;
+}

@@ -1,7 +1,8 @@
 import React from 'react';
 import ImageMeme from './ImageMeme';
 import VideoMeme from './VideoMeme';
-import {getExtension, isVideoExtension, isImageExtension} from '../../util/utility';
+import { getExtension, isVideoExtension, isImageExtension } from '../../util/utility';
+import './GalleryMeme.css'
 
 class GalleryMeme extends React.Component {
   constructor(props) {
@@ -18,15 +19,15 @@ class GalleryMeme extends React.Component {
     this.setState((state) => {
       const nextIndex = state.urlIndex === this.props.urls.length - 1 ? 0 : state.urlIndex + 1
 
-      return {urlIndex: nextIndex}
+      return { urlIndex: nextIndex }
     })
   }
 
   previousMeme() {
     this.setState((state) => {
       const nextIndex = state.urlIndex === 0 ? this.props.urls.length - 1 : state.urlIndex - 1
-      
-      return {urlIndex: nextIndex}
+
+      return { urlIndex: nextIndex }
     })
   }
 
@@ -45,8 +46,10 @@ class GalleryMeme extends React.Component {
     return (
       <div>
         {memes[this.state.urlIndex]}
-        <button onClick={this.previousMeme}>{'<<'}</button>
-        <button onClick={this.nextMeme}>{'>>'}</button>
+        <div className='galleryNav'>
+          <button className='button galleryButton' onClick={this.previousMeme}><b>{'<'}</b> Poprzedni</button>
+          <button className='button galleryButton' onClick={this.nextMeme}>Następny <b>{'>'}</b></button>
+        </div>
       </div>
     )
   }
