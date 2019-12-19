@@ -104,7 +104,6 @@ class App extends React.Component {
 
     return (
       <>
-        <HamburgerMenu onClick={this.toggleSideBar} />
         {
           this.state.showSideBar &&
           <SitePicker
@@ -141,6 +140,7 @@ class App extends React.Component {
             </div>
           }
         </div>
+        <HamburgerMenu onClick={this.toggleSideBar} />
       </>
     )
   }
