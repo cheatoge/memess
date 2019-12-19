@@ -20,6 +20,10 @@ const SITES = [
     url: '9gag'
   },
   {
+    name: '9GAG NSFW',
+    url: '9gagnsfw'
+  },
+  {
     name: 'Demotywatory',
     url: 'demotywatory'
   },
