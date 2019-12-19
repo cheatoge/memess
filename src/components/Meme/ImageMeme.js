@@ -3,9 +3,7 @@ import React from 'react';
 class ImageMeme extends React.Component {
   render() {
     return (
-      <div>
-        <img alt="meme" src={this.props.url} />
-      </div>
+      <img margin='0' alt='meme' src={this.props.url} width='100%' height='auto' />
     )
   }
 }
