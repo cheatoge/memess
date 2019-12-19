@@ -19,7 +19,7 @@ class SitePicker extends React.Component {
     })
 
     return (
-      <div className="sitePicker">
+      <div className="sitePicker shadow">
         <div className="sitePickerAppName">MEMESS</div>
         {siteButtons}
       </div>

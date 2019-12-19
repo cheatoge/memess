@@ -8,7 +8,7 @@ class HamburgerMenu extends React.Component {
 
   render() {
     return (
-      <button className='hamburgerMenu' onClick={this.handleClick}>
+      <button className='hamburgerMenu shadow' onClick={this.handleClick}>
         <div>
           <div className='hamburgerBar'></div>
           <div className='hamburgerBar'></div>
