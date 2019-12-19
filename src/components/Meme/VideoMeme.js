@@ -4,7 +4,7 @@ class VideoMeme extends React.Component {
   render() {
     return (
       <div>
-        <video src={this.props.url} preload="metadata" controls />
+        <video src={this.props.url} preload="metadata" controls width='100%' height='auto' />
       </div>
     )
   }
