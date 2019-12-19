@@ -16,7 +16,9 @@ class MemesPage extends React.Component {
     });
     return (
       <div>
-        <h2>{this.props.siteName}</h2>
+        <div className='pageNameWrapper'>
+          <h2 className='pageName'>{this.props.siteName}</h2>
+        </div>
         <div>
           {preparedMemes}
         </div>
