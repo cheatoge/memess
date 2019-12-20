@@ -28,8 +28,19 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.setState({
-      showSideBar: getViewportWidth() >= DESKTOP_VIEWPORT_SIZE
+    this.handleResize()
+    window.addEventListener('resize', this.handleResize)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleResize)
+  }
+
+  handleResize = () => {
+    this.setState(state => {
+      const isMobile = getViewportWidth() < DESKTOP_VIEWPORT_SIZE
+
+      return {showSideBar: isMobile ? state.showSideBar : true}
     })
   }
 
