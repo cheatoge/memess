@@ -1,4 +1,5 @@
 const API_URL = 'http://api.12345.pl'
+const DESKTOP_VIEWPORT_SIZE = 800
 
 const HOME_SITE = {
   name: 'Strona główna',
@@ -33,4 +34,4 @@ const SITES = [
   }
 ];
 
-export { API_URL, HOME_SITE, SITES }
+export { API_URL, DESKTOP_VIEWPORT_SIZE, HOME_SITE, SITES }

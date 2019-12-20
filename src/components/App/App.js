@@ -4,7 +4,8 @@ import DataButton from '../Button/DataButton.js'
 import SitePicker from '../SitePicker/SitePicker.js'
 import MemesPage from '../MemesPage/MemesPage.js';
 import HamburgerMenu from '../Button/HamburgerMenu.js'
-import { API_URL, HOME_SITE, SITES } from './Config';
+import { API_URL, HOME_SITE, SITES, DESKTOP_VIEWPORT_SIZE } from './Config';
+import { getViewportWidth } from '../../util/utility.js';
 import './App.css';
 
 class App extends React.Component {
@@ -24,6 +25,12 @@ class App extends React.Component {
     this.onSiteSelected = this.onSiteSelected.bind(this)
     this.onNextPageRequested = this.onNextPageRequested.bind(this)
     this.onFetchError = this.onFetchError.bind(this)
+  }
+
+  componentDidMount() {
+    this.setState({
+      showSideBar: getViewportWidth() >= DESKTOP_VIEWPORT_SIZE
+    })
   }
 
   onFetchError(error) {
@@ -68,7 +75,9 @@ class App extends React.Component {
   }
 
   onSiteSelected(event, site) {
-    this.setState({ showSideBar: false })
+    if (getViewportWidth() < DESKTOP_VIEWPORT_SIZE) {
+      this.setState({ showSideBar: false })
+    }
 
     if (site.url == HOME_SITE.url) {
       this.onHomeSiteSelected()
@@ -109,6 +118,7 @@ class App extends React.Component {
           <SitePicker
             sites={SITES}
             onSiteSelected={this.onSiteSelected}
+            onBackgroundClick={this.toggleSideBar}
           />
         }
         <div className="wrapper">

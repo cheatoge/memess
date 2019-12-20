@@ -22,4 +22,9 @@ const isVideoExtension = (extension) => {
   return VIDEO_EXTENSIONS.includes(extension)
 }
 
-export { IMAGE_EXTENSIONS, VIDEO_EXTENSIONS, getExtension, isVideoExtension, isImageExtension }
+const getViewportWidth = () => {
+  // Gets value equal to value checked by `@media (width)`
+  return Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+}
+
+export { IMAGE_EXTENSIONS, VIDEO_EXTENSIONS, getExtension, isVideoExtension, isImageExtension, getViewportWidth }
