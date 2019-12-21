@@ -3,6 +3,7 @@ import ImageMeme from './ImageMeme';
 import TextMeme from './TextMeme';
 import VideoMeme from './VideoMeme';
 import GalleryMeme from './GalleryMeme';
+import ErrorWindow from '../Error/ErrorWindow.js'
 import './Meme.css'
 
 const CONTENT_TYPES = {
@@ -36,7 +37,10 @@ class Meme extends React.Component {
         break;
 
       default:
-        memeView = <p>Nieobsługiwany format :(</p>
+        memeView = <ErrorWindow
+          error={'Nieobsługiwany format pliku :('}
+          hideCloseButton={true}
+        />
         break;
     }
 

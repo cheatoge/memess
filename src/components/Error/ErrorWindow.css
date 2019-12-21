@@ -1,0 +1,13 @@
+.errorWindow {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: #BB4430;
+  align-items: center;
+}
+
+.errorWindowText {
+  padding: 10px;
+  text-align: center;
+  color: white;
+}

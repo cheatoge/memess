@@ -1,11 +1,12 @@
-import React from 'react';
-import logo from '../../logo.svg';
+import React from 'react'
+import logo from '../../logo.svg'
 import DataButton from '../Button/DataButton.js'
 import SitePicker from '../SitePicker/SitePicker.js'
-import MemesPage from '../MemesPage/MemesPage.js';
+import MemesPage from '../MemesPage/MemesPage.js'
 import HamburgerMenu from '../Button/HamburgerMenu.js'
-import { API_URL, HOME_SITE, SITES, DESKTOP_VIEWPORT_SIZE } from './Config';
-import { getViewportWidth } from '../../util/utility.js';
+import ErrorWindow from '../Error/ErrorWindow.js'
+import { API_URL, HOME_SITE, SITES, DESKTOP_VIEWPORT_SIZE } from './Config'
+import { getViewportWidth } from '../../util/utility.js'
 import './App.css';
 
 class App extends React.Component {
@@ -40,12 +41,12 @@ class App extends React.Component {
     this.setState(state => {
       const isMobile = getViewportWidth() < DESKTOP_VIEWPORT_SIZE
 
-      return {showSideBar: isMobile ? state.showSideBar : true}
+      return { showSideBar: isMobile ? state.showSideBar : true }
     })
   }
 
   onFetchError(error) {
-    this.setState({ error: 'Błąd podczas pobierania memów' })
+    this.setState({ error: 'Wystąpił błąd podczas pobierania memów' })
     console.log(error)
   }
 
@@ -118,6 +119,10 @@ class App extends React.Component {
     })
   }
 
+  clearError = () => {
+    this.setState({ error: null })
+  }
+
   render() {
     const currentUrl = this.state.site.url
     const nextPageUrl = this.state.nextPageUrl
@@ -152,12 +157,10 @@ class App extends React.Component {
           }
           {
             this.state.error != null &&
-            <div>
-              <p>{this.state.error}</p>
-              <button onClick={() => { this.setState({ error: null }) }}>
-                OK
-              </button>
-            </div>
+            <ErrorWindow
+              error={this.state.error}
+              onClick={this.clearError}
+            />
           }
         </div>
         <HamburgerMenu onClick={this.toggleSideBar} />
