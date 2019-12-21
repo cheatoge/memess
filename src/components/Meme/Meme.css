@@ -3,6 +3,10 @@
   background-color: #40393c;
 }
 
+.meme:last-child {
+  margin-bottom: 0
+}
+
 .memeBlock {
   display: block;
   padding: 4px 6px;
