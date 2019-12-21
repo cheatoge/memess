@@ -52,8 +52,13 @@ class Meme extends React.Component {
         {memeView != null && memeView}
         {
           meme.comment_count != null &&
-          <div className='memeBlock comments'>
+          <div className='memeBlock memeFooter'>
             <span>Komentarzy: {meme.comment_count}</span>
+            <span>
+              <a href={meme.url} className='memeLink' target='_blank' rel="noopener noreferrer">
+                Źródło
+              </a>
+            </span>
           </div>
         }
       </div>
