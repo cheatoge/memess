@@ -80,6 +80,8 @@ class App extends React.Component {
   }
 
   onSiteSelected = (event, site) => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+
     if (getViewportWidth() < DESKTOP_VIEWPORT_SIZE) {
       this.setState({ showSideBar: false })
     }
@@ -89,16 +91,14 @@ class App extends React.Component {
     } else {
       this.onMemesSiteSelected(site)
     }
-
-    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   onNextPageRequested = (event, url) => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
     this.fetchMemesData(url)
       .then(json => {
         if (!json) { return }
 
-        window.scrollTo({ top: 0, behavior: 'smooth' })
         this.setState({
           memes: json.memes,
           nextPageUrl: json.next_page_url
