@@ -1,5 +1,4 @@
 import React from 'react'
-import logo from '../../logo.svg'
 import DataButton from '../Button/DataButton.js'
 import SitePicker from '../SitePicker/SitePicker.js'
 import LandingPage from '../LandingPage/LandingPage.js'
