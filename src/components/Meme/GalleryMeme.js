@@ -35,11 +35,11 @@ class GalleryMeme extends React.Component {
     let memes = this.props.urls.map(url => {
       const extension = getExtension(url)
       if (isImageExtension(extension)) {
-        return <ImageMeme url={url} />
+        return <ImageMeme key={url} url={url} />
       } else if (isVideoExtension(extension)) {
-        return <VideoMeme url={url} />
+        return <VideoMeme key={url} url={url} />
       } else {
-        return <p>Unsupported extension :(</p>
+        return <p key={url}>Unsupported extension :(</p>
       }
     })
 
