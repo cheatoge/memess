@@ -19,13 +19,6 @@ class App extends React.Component {
       memes: null,
       nextPageUrl: null
     }
-
-    this.fetchMemesData = this.fetchMemesData.bind(this)
-    this.onHomeSiteSelected = this.onHomeSiteSelected.bind(this)
-    this.onMemesSiteSelected = this.onMemesSiteSelected.bind(this)
-    this.onSiteSelected = this.onSiteSelected.bind(this)
-    this.onNextPageRequested = this.onNextPageRequested.bind(this)
-    this.onFetchError = this.onFetchError.bind(this)
   }
 
   componentDidMount() {
@@ -45,12 +38,12 @@ class App extends React.Component {
     })
   }
 
-  onFetchError(error) {
+  onFetchError = (error) => {
     this.setState({ error: 'Wystąpił błąd podczas pobierania memów' })
     console.log(error)
   }
 
-  async fetchMemesData(url) {
+  fetchMemesData = async (url) => {
     const memesUrl = `${API_URL}/${url}`
     const json = await fetch(memesUrl)
       .then(response => {
@@ -64,7 +57,7 @@ class App extends React.Component {
     return json
   }
 
-  onHomeSiteSelected() {
+  onHomeSiteSelected = () => {
     this.setState({
       site: HOME_SITE,
       memes: null,
@@ -72,7 +65,7 @@ class App extends React.Component {
     })
   }
 
-  onMemesSiteSelected(site) {
+  onMemesSiteSelected = (site) => {
     this.fetchMemesData(site.url)
       .then(json => {
         if (!json) { return }
@@ -86,7 +79,7 @@ class App extends React.Component {
       })
   }
 
-  onSiteSelected(event, site) {
+  onSiteSelected = (event, site) => {
     if (getViewportWidth() < DESKTOP_VIEWPORT_SIZE) {
       this.setState({ showSideBar: false })
     }
@@ -100,7 +93,7 @@ class App extends React.Component {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
-  onNextPageRequested(event, url) {
+  onNextPageRequested = (event, url) => {
     this.fetchMemesData(url)
       .then(json => {
         if (!json) { return }

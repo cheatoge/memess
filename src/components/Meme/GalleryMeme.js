@@ -10,12 +10,9 @@ class GalleryMeme extends React.Component {
     this.state = {
       urlIndex: 0
     }
-
-    this.nextMeme = this.nextMeme.bind(this)
-    this.previousMeme = this.previousMeme.bind(this)
   }
 
-  nextMeme() {
+  nextMeme = () => {
     this.setState((state) => {
       const nextIndex = state.urlIndex === this.props.urls.length - 1 ? 0 : state.urlIndex + 1
 
@@ -23,7 +20,7 @@ class GalleryMeme extends React.Component {
     })
   }
 
-  previousMeme() {
+  previousMeme = () => {
     this.setState((state) => {
       const nextIndex = state.urlIndex === 0 ? this.props.urls.length - 1 : state.urlIndex - 1
 
