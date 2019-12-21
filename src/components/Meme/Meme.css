@@ -1,9 +1,9 @@
 .meme {
   margin: 0 0 30px 0;
+  background-color: #40393c;
 }
 
 .memeBlock {
-  background-color: #40393c;
   display: block;
   padding: 4px;
   color: #e3e3e3;
@@ -11,6 +11,7 @@
 }
 
 .comments {
+  margin-top: 0;
   font-size: 0.86em;
 }
 
