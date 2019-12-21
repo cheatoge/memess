@@ -2,6 +2,7 @@ import React from 'react'
 import logo from '../../logo.svg'
 import DataButton from '../Button/DataButton.js'
 import SitePicker from '../SitePicker/SitePicker.js'
+import LandingPage from '../LandingPage/LandingPage.js'
 import MemesPage from '../MemesPage/MemesPage.js'
 import HamburgerMenu from '../Button/HamburgerMenu.js'
 import ErrorWindow from '../Error/ErrorWindow.js'
@@ -131,6 +132,10 @@ class App extends React.Component {
           />
         }
         <div className="wrapper">
+          {
+            !this.state.site.url &&
+            <LandingPage />
+          }
           {
             currentUrl.length > 0 &&
             <MemesPage

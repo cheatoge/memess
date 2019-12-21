@@ -1,0 +1,15 @@
+.landingWrapper {
+ margin-top: 30px;
+}
+
+.textBlock {
+  padding: 20px;
+}
+
+.centerText {
+  text-align: center;
+}
+
+.githubMark:hover {
+  fill: red;
+}

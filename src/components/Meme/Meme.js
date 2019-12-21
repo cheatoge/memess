@@ -45,7 +45,7 @@ class Meme extends React.Component {
     }
 
     return (
-      <div className='meme'>
+      <div className='meme block'>
         <a href={meme.url} target='_blank' rel="noopener noreferrer">
           <h3 className='memeBlock memeLink'>{meme.title}</h3>
         </a>

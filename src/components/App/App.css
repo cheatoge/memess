@@ -11,6 +11,26 @@ body {
   box-sizing: border-box;
 }
 
+.appName {
+  color: white;
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  font-weight: 700;
+  font-size: 1.2em;
+  letter-spacing: 5px;
+}
+
+.appNameBig {
+  font-size: 1.8em;
+}
+
+.block {
+  background-color: #40393c;
+  color: #e3e3e3;
+}
+
 @media (min-width: 800px) {
   .wrapper {
     /* center the wrapper with sitePicker shown */
@@ -22,6 +42,14 @@ body {
   -webkit-box-shadow: 0px 0px 6px 2px rgba(28,28,28,0.55);
   -moz-box-shadow: 0px 0px 6px 2px rgba(28,28,28,0.55);
   box-shadow: 0px 0px 6px 2px rgba(28,28,28,0.55);
+}
+
+a {
+  color: #e3e3e3;
+}
+
+a:hover {
+  color:white;
 }
 
 a:link {

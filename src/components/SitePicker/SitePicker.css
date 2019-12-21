@@ -13,17 +13,6 @@
   z-index: 9;
 }
 
-.sitePickerAppName {
-  color: white;
-  width: 100%;
-  text-align: center;
-  padding: 20px;
-  box-sizing: border-box;
-  font-weight: 700;
-  font-size: 1.2em;
-  letter-spacing: 5px;
-}
-
 .sitePickerBackground {
   position: fixed;
   width: 100vw;
