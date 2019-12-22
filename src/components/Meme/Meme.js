@@ -5,6 +5,7 @@ import VideoMeme from './VideoMeme';
 import GalleryMeme from './GalleryMeme';
 import { ErrorWindow } from '../ErrorWindow'
 import { MemeHeader } from '../MemeHeader'
+import { MemeFooter } from '../MemeFooter'
 import './Meme.css'
 
 const CONTENT_TYPES = {
@@ -51,14 +52,10 @@ class Meme extends React.Component {
         {memeView != null && memeView}
         {
           meme.comment_count != null &&
-          <div className='memeBlock memeFooter'>
-            <span>Komentarzy: {meme.comment_count}</span>
-            <span>
-              <a href={meme.url} className='memeLink' target='_blank' rel="noopener noreferrer">
-                Źródło
-              </a>
-            </span>
-          </div>
+          <MemeFooter
+            source={meme.url}
+            commentCount={meme.comment_count}
+          />
         }
       </div>
     )
