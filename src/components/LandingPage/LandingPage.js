@@ -1,5 +1,5 @@
-import React from 'react';
-import GithubMark from '../SVG/GithubMark.js'
+import React from 'react'
+import { GithubMark } from '../SVG'
 import { SitePicker } from '../SitePicker'
 import './LandingPage.css'
 
