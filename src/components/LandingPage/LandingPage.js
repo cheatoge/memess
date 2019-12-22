@@ -7,7 +7,7 @@ class LandingPage extends React.Component {
   render() {
     return (
       <div className='block landingWrapper'>
-        <div className='appName appNameBig'>MEMESS</div>
+        <div className='app-name app-name-big'>MEMESS</div>
         <p className="textBlock centerText">
           Enjoy memes without loads of ads and annoying UI.
         </p>

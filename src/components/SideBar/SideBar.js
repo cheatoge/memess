@@ -13,7 +13,7 @@ class SideBar extends React.Component {
         </div>
 
         <div className="sideBar shadow">
-          <div className="appName">MEMESS</div>
+          <div className="app-name">MEMESS</div>
           <SitePicker
             onSiteSelected={this.props.onSiteSelected}
             sites={this.props.sites}

@@ -25,8 +25,8 @@ body {
   box-sizing: border-box;
 }
 
-.appName {
-  color: white;
+.app-name {
+  color: var(--color-text);
   width: 100%;
   text-align: center;
   padding: 20px;
@@ -36,7 +36,7 @@ body {
   letter-spacing: 5px;
 }
 
-.appNameBig {
+.app-name-big {
   font-size: 1.8em;
 }
 
