@@ -5,15 +5,15 @@ import './SideBar.css'
 class SideBar extends React.Component {
   render() {
     return (
-      <div>
+      <div className='side-bar-wrapper'>
         <div
-          className="sideBarBackground"
+          className="side-bar-tap-background"
           onClick={this.props.onBackgroundClick}
         >
         </div>
 
-        <div className="sideBar shadow">
-          <div className="app-name">MEMESS</div>
+        <div className='side-bar'>
+          <div className='app-name'>MEMESS</div>
           <SitePicker
             onSiteSelected={this.props.onSiteSelected}
             sites={this.props.sites}

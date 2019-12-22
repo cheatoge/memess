@@ -1,4 +1,8 @@
-.sideBar {
+.side-bar-wrapper {
+  position: relative;
+}
+
+.side-bar {
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -10,18 +14,19 @@
   width: 280px;
   top: 0;
   left: 0;
-  z-index: 9;
 }
 
-.sideBarBackground {
+.side-bar-tap-background {
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
   background-color: rgba(26, 26, 26, 0.8);
 }
 
 @media (min-width: 800px) {
-  .sideBarBackground {
+  .side-bar-tap-background {
     display: none;
   }
 }

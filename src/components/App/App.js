@@ -122,14 +122,6 @@ class App extends React.Component {
 
     return (
       <>
-        {
-          this.state.showSideBar &&
-          <SideBar
-            sites={[HOME_PAGE, ...SITES]}
-            onSiteSelected={this.onSiteSelected}
-            onBackgroundClick={this.toggleSideBar}
-          />
-        }
         <div className="wrapper">
           {
             !this.state.site.url &&
@@ -162,6 +154,14 @@ class App extends React.Component {
             </ErrorWindow>
           }
         </div>
+        {
+          this.state.showSideBar &&
+          <SideBar
+            sites={[HOME_PAGE, ...SITES]}
+            onSiteSelected={this.onSiteSelected}
+            onBackgroundClick={this.toggleSideBar}
+          />
+        }
         <HamburgerMenu onClick={this.toggleSideBar} />
       </>
     )
