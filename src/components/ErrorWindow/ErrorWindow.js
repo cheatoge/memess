@@ -8,7 +8,7 @@ class ErrorWindow extends React.Component {
         <p className='errorWindowText'>{this.props.error}</p>
         {
           !this.props.hideCloseButton &&
-          <button className='button button-white' style={{width: '200px'}} onClick={this.props.onClick}>
+          <button className='button button-white' className='okButton' onClick={this.props.onClick}>
             <b>OK</b>
           </button>
         }
@@ -17,4 +17,4 @@ class ErrorWindow extends React.Component {
   }
 }
 
-export default ErrorWindow;
+export { ErrorWindow }

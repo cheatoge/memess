@@ -1,5 +1,5 @@
 import React from 'react';
-import DataButton from '../Button/DataButton.js'
+import { DataButton } from '../DataButton'
 
 class SitePicker extends React.Component {
   render() {

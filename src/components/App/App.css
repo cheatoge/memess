@@ -31,6 +31,41 @@ body {
   color: #e3e3e3;
 }
 
+.button {
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #BB4430;
+  padding: 12px;
+  display: inline-block;
+  border: none;
+  margin: 5px;
+}
+
+.button:hover {
+  border-bottom: 2px solid white;
+  padding: 12px 12px 10px 12px;
+}
+
+.button-white {
+  color: #333;
+  background: white;
+}
+
+.button-white:hover {
+  border-bottom: 2px solid #333;
+}
+
+.okButton {
+  width: 200px;
+}
+
+.nextPageWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end
+}
+
 @media (min-width: 800px) {
   .wrapper {
     /* center the wrapper with sitePicker shown */

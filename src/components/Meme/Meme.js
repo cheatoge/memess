@@ -3,7 +3,7 @@ import ImageMeme from './ImageMeme';
 import TextMeme from './TextMeme';
 import VideoMeme from './VideoMeme';
 import GalleryMeme from './GalleryMeme';
-import ErrorWindow from '../Error/ErrorWindow.js'
+import { ErrorWindow } from '../ErrorWindow'
 import './Meme.css'
 
 const CONTENT_TYPES = {
@@ -66,4 +66,4 @@ class Meme extends React.Component {
   }
 }
 
-export default Meme;
+export { Meme };

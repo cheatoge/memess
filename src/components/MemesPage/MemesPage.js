@@ -1,5 +1,5 @@
 import React from 'react';
-import Meme from '../Meme/Meme';
+import { Meme } from '../Meme';
 import './MemesPage.css'
 
 class MemesPage extends React.Component {
@@ -27,4 +27,4 @@ class MemesPage extends React.Component {
   }
 }
 
-export default MemesPage;
+export { MemesPage };

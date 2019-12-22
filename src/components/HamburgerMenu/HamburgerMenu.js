@@ -19,4 +19,4 @@ class HamburgerMenu extends React.Component {
   }
 }
 
-export default HamburgerMenu
+export { HamburgerMenu }

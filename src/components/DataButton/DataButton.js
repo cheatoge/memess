@@ -1,5 +1,4 @@
 import React from 'react';
-import './Button.css'
 
 class DataButton extends React.Component {
   handleClick = (event) => {
@@ -15,4 +14,4 @@ class DataButton extends React.Component {
   }
 }
 
-export default DataButton
+export { DataButton }
