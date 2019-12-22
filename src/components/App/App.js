@@ -1,6 +1,6 @@
 import React from 'react'
 import DataButton from '../Button/DataButton.js'
-import SitePicker from '../SitePicker/SitePicker.js'
+import SideBar from '../SideBar/SideBar.js'
 import LandingPage from '../LandingPage/LandingPage.js'
 import MemesPage from '../MemesPage/MemesPage.js'
 import HamburgerMenu from '../Button/HamburgerMenu.js'
@@ -124,7 +124,7 @@ class App extends React.Component {
       <>
         {
           this.state.showSideBar &&
-          <SitePicker
+          <SideBar
             sites={SITES}
             onSiteSelected={this.onSiteSelected}
             onBackgroundClick={this.toggleSideBar}

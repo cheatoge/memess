@@ -1,6 +1,5 @@
 import React from 'react';
 import DataButton from '../Button/DataButton.js'
-import './SitePicker.css'
 
 class SitePicker extends React.Component {
   render() {
@@ -19,18 +18,9 @@ class SitePicker extends React.Component {
     })
 
     return (
-      <div>
-        <div
-          className="sitePickerBackground"
-          onClick={this.props.onBackgroundClick}
-        >
-        </div>
-        
-        <div className="sitePicker shadow">
-          <div className="appName">MEMESS</div>
-          {siteButtons}
-        </div>
-      </div>
+      <>
+        {siteButtons}
+      </>
     )
   }
 }
