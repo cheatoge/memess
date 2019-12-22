@@ -48,9 +48,9 @@ class GalleryMeme extends React.Component {
     return (
       <div>
         {memes[this.state.urlIndex]}
-        <div className='galleryNav'>
-          <button className='button galleryButton' onClick={this.previousMeme}><b>{'<'}</b> Poprzedni</button>
-          <button className='button galleryButton' onClick={this.nextMeme}>Następny <b>{'>'}</b></button>
+        <div className='gallery-nav'>
+          <button className='button gallery-button' onClick={this.previousMeme}><b>{'<'}</b> Poprzedni</button>
+          <button className='button gallery-button' onClick={this.nextMeme}>Następny <b>{'>'}</b></button>
         </div>
       </div>
     )
