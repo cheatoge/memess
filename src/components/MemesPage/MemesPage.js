@@ -56,14 +56,6 @@ class MemesPage extends React.Component {
       )
     })
 
-    // memes.forEach(memeJson => {
-    //   preparedMemes.push(
-    //     <Meme
-    //       key={memeJson.view_url}
-    //       meme={memeJson}
-    //     />
-    //   )
-    // });
     return (
       <div>
         <div className='pageNameWrapper'>
