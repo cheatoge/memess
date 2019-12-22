@@ -80,8 +80,6 @@ class App extends React.Component {
   }
 
   onSiteSelected = (event, site) => {
-    scrollToTop()
-
     if (getViewportWidth() < DESKTOP_VIEWPORT_SIZE) {
       this.setState({ showSideBar: false })
     }
@@ -94,11 +92,11 @@ class App extends React.Component {
   }
 
   onNextPageRequested = (event, url) => {
-    scrollToTop()
     this.fetchMemesData(url)
       .then(json => {
         if (!json) { return }
 
+        scrollToTop()
         this.setState({
           memes: json.memes,
           nextPageUrl: json.next_page_url
@@ -149,9 +147,11 @@ class App extends React.Component {
           }
           {
             this.state.error != null &&
-            <ErrorWindow onClick={this.clearError}>
-              {this.state.error}
-            </ErrorWindow>
+            <div className='error-container'>
+              <ErrorWindow onClick={this.clearError}>
+                {this.state.error}
+              </ErrorWindow>
+            </div>
           }
         </div>
         {
