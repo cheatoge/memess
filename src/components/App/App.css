@@ -57,7 +57,7 @@ body {
   padding: 12px 12px 10px 12px;
 }
 
-.nextPageWrapper {
+.next-page-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: flex-end

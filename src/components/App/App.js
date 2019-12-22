@@ -147,7 +147,7 @@ class App extends React.Component {
           }
           {
             nextPageUrl != null &&
-            <div className="nextPageWrapper">
+            <div className="next-page-wrapper">
               <DataButton
                 text="Następna strona"
                 onClick={this.onNextPageRequested}
