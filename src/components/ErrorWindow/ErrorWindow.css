@@ -28,5 +28,4 @@
 .error-window-button:hover {
   border-bottom: 2px solid var(--color-error-button-text);
   padding: 12px 12px 10px 12px;
-  border-bottom: 2px solid var(--color-error-button-text);
 }
