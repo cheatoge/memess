@@ -1,5 +1,4 @@
 import React from 'react';
-import DataButton from '../Button/DataButton.js'
 import SitePicker from '../SitePicker/SitePicker.js'
 import './SideBar.css'
 
@@ -12,7 +11,7 @@ class SideBar extends React.Component {
           onClick={this.props.onBackgroundClick}
         >
         </div>
-        
+
         <div className="sideBar shadow">
           <div className="appName">MEMESS</div>
           <SitePicker

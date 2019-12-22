@@ -1,13 +1,12 @@
 const API_URL = 'http://api.12345.pl'
 const DESKTOP_VIEWPORT_SIZE = 800
 
-const HOME_SITE = {
+const HOME_PAGE = {
   name: 'Strona główna',
   url: ''
 };
 
 const SITES = [
-  HOME_SITE,
   {
     name: 'Anonimowe',
     url: 'anonimowe'
@@ -34,4 +33,4 @@ const SITES = [
   }
 ];
 
-export { API_URL, DESKTOP_VIEWPORT_SIZE, HOME_SITE, SITES }
+export { API_URL, DESKTOP_VIEWPORT_SIZE, HOME_PAGE, SITES }

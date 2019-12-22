@@ -5,7 +5,7 @@ import LandingPage from '../LandingPage/LandingPage.js'
 import MemesPage from '../MemesPage/MemesPage.js'
 import HamburgerMenu from '../Button/HamburgerMenu.js'
 import ErrorWindow from '../Error/ErrorWindow.js'
-import { API_URL, HOME_SITE, SITES, DESKTOP_VIEWPORT_SIZE } from './Config'
+import { API_URL, HOME_PAGE, SITES, DESKTOP_VIEWPORT_SIZE } from './Config'
 import { getViewportWidth, scrollToTop } from '../../util/utility.js'
 import './App.css';
 
@@ -14,7 +14,7 @@ class App extends React.Component {
     super(props)
 
     this.state = {
-      site: HOME_SITE,
+      site: HOME_PAGE,
       showSideBar: false,
       memes: null,
       nextPageUrl: null
@@ -59,7 +59,7 @@ class App extends React.Component {
 
   onHomeSiteSelected = () => {
     this.setState({
-      site: HOME_SITE,
+      site: HOME_PAGE,
       memes: null,
       nextPageUrl: null
     })
@@ -86,7 +86,7 @@ class App extends React.Component {
       this.setState({ showSideBar: false })
     }
 
-    if (site.url == HOME_SITE.url) {
+    if (site.url === HOME_PAGE.url) {
       this.onHomeSiteSelected()
     } else {
       this.onMemesSiteSelected(site)
@@ -125,7 +125,7 @@ class App extends React.Component {
         {
           this.state.showSideBar &&
           <SideBar
-            sites={SITES}
+            sites={[HOME_PAGE, ...SITES]}
             onSiteSelected={this.onSiteSelected}
             onBackgroundClick={this.toggleSideBar}
           />
