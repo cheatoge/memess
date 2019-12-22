@@ -1,4 +1,5 @@
 import React from 'react';
+import './DataButton.css'
 
 class DataButton extends React.Component {
   handleClick = (event) => {
@@ -7,7 +8,7 @@ class DataButton extends React.Component {
 
   render() {
     return (
-      <button className='button' onClick={this.handleClick}>
+      <button className='data-button' onClick={this.handleClick}>
         {this.props.text}
       </button>
     )

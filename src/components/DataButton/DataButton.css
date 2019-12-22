@@ -1,0 +1,16 @@
+.data-button {
+  color: var(--color-text); 
+  text-transform: uppercase;
+  text-decoration: none;
+  background: var(--color-primary);
+  padding: 12px;
+  display: inline-block;
+  border: none;
+  margin: 5px;
+}
+
+.data-button:hover {
+  color: var(--color-text-active);
+  border-bottom: 2px solid white;
+  padding: 12px 12px 10px 12px;
+}
