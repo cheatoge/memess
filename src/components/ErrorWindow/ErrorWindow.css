@@ -1,13 +1,32 @@
-.errorWindow {
+.error-window {
   padding: 10px;
   display: flex;
   flex-direction: column;
-  background-color: #BB4430;
+  background-color: var(--color-error);
   align-items: center;
 }
 
-.errorWindowText {
+.error-window-text {
   padding: 10px;
   text-align: center;
-  color: white;
+  color: var(--color-error-text);
+}
+
+.error-window-button {
+  text-transform: uppercase;
+  text-decoration: none;
+  background: var(--color-primary);
+  padding: 12px;
+  display: inline-block;
+  border: none;
+  margin: 5px;
+  min-width: 100px;
+  background: var(--color-error-button);
+  color: var(--color-error-button-text);
+}
+
+.error-window-button:hover {
+  border-bottom: 2px solid var(--color-error-button-text);
+  padding: 12px 12px 10px 12px;
+  border-bottom: 2px solid var(--color-error-button-text);
 }

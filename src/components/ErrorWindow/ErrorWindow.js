@@ -4,11 +4,11 @@ import './ErrorWindow.css'
 class ErrorWindow extends React.Component {
   render() {
     return (
-      <div className='errorWindow'>
-        <p className='errorWindowText'>{this.props.children}</p>
+      <div className='error-window'>
+        <p className='error-window-text'>{this.props.children}</p>
         {
           !this.props.hideCloseButton &&
-          <button className='button button-white okButton' onClick={this.props.onClick}>
+          <button className='error-window-button' onClick={this.props.onClick}>
             <b>OK</b>
           </button>
         }

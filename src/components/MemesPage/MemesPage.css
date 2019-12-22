@@ -9,7 +9,7 @@
 .memeBlock {
   display: block;
   padding: 4px 6px;
-  color: #e3e3e3;
+  color: var(--color-text);
   margin: 4px 0;
 }
 
@@ -22,7 +22,7 @@
 }
 
 .memeLink {
-  color: #e3e3e3;
+  color: var(--color-text);
 }
 
 .memeLink:hover {

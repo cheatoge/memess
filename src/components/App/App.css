@@ -1,5 +1,19 @@
+:root {
+  --color-background: #231F20;
+  --color-surface: #40393c;
+  --color-text: #eee;
+  --color-text-active: #fff;
+  --color-primary: #bb4430;
+  --color-secondary: #fff;
+
+  --color-error: #bb4430;
+  --color-error-text: #eee;
+  --color-error-button: #eee;
+  --color-error-button-text: #333;
+}
+
 body {
-  background-color: #231F20;
+  background-color: var(--color-background);
   font-family: 'Roboto', sans-serif;
 }
 
@@ -27,15 +41,15 @@ body {
 }
 
 .block {
-  background-color: #40393c;
-  color: #e3e3e3;
+  background-color: var(--color-surface);
+  color: var(--color-text);
 }
 
 .button {
-  color: #fff;
+  color: var(--color-text); 
   text-transform: uppercase;
   text-decoration: none;
-  background: #BB4430;
+  background: var(--color-primary);
   padding: 12px;
   display: inline-block;
   border: none;
@@ -43,21 +57,9 @@ body {
 }
 
 .button:hover {
+  color: var(--color-text-active);
   border-bottom: 2px solid white;
   padding: 12px 12px 10px 12px;
-}
-
-.button-white {
-  color: #333;
-  background: white;
-}
-
-.button-white:hover {
-  border-bottom: 2px solid #333;
-}
-
-.okButton {
-  width: 200px;
 }
 
 .nextPageWrapper {
@@ -80,11 +82,11 @@ body {
 }
 
 a {
-  color: #e3e3e3;
+  color: var(--color-text);
 }
 
 a:hover {
-  color:white;
+  color: var(--color-text-active);
 }
 
 a:link {
