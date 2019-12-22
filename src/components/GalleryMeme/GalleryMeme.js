@@ -1,6 +1,7 @@
 import React from 'react'
 import { ImageMeme } from '../ImageMeme'
 import { VideoMeme } from '../VideoMeme'
+import { ErrorWindow } from '../ErrorWindow'
 import { getExtension, isVideoExtension, isImageExtension } from '../../util/utility'
 import './GalleryMeme.css'
 
@@ -36,7 +37,11 @@ class GalleryMeme extends React.Component {
       } else if (isVideoExtension(extension)) {
         return <VideoMeme key={url} content={{ url: url }} />
       } else {
-        return <p key={url}>Unsupported extension :(</p>
+        return (
+          <ErrorWindow key={url} hideCloseButton={true}>
+            Nieobsługiwany format pliku :(
+          </ErrorWindow>
+        )
       }
     })
 
