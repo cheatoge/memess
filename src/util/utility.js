@@ -27,4 +27,12 @@ const getViewportWidth = () => {
   return Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 }
 
-export { IMAGE_EXTENSIONS, VIDEO_EXTENSIONS, getExtension, isVideoExtension, isImageExtension, getViewportWidth }
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' })
+}
+
+export {
+  IMAGE_EXTENSIONS, VIDEO_EXTENSIONS, getExtension,
+  isVideoExtension, isImageExtension, getViewportWidth,
+  scrollToTop
+}

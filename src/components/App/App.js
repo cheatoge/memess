@@ -6,7 +6,7 @@ import MemesPage from '../MemesPage/MemesPage.js'
 import HamburgerMenu from '../Button/HamburgerMenu.js'
 import ErrorWindow from '../Error/ErrorWindow.js'
 import { API_URL, HOME_SITE, SITES, DESKTOP_VIEWPORT_SIZE } from './Config'
-import { getViewportWidth } from '../../util/utility.js'
+import { getViewportWidth, scrollToTop } from '../../util/utility.js'
 import './App.css';
 
 class App extends React.Component {
@@ -70,7 +70,7 @@ class App extends React.Component {
       .then(json => {
         if (!json) { return }
 
-        window.scrollTo({ top: 0, behavior: 'smooth' })
+        scrollToTop()
         this.setState({
           site: site,
           memes: json.memes,
@@ -80,7 +80,7 @@ class App extends React.Component {
   }
 
   onSiteSelected = (event, site) => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    scrollToTop()
 
     if (getViewportWidth() < DESKTOP_VIEWPORT_SIZE) {
       this.setState({ showSideBar: false })
@@ -94,7 +94,7 @@ class App extends React.Component {
   }
 
   onNextPageRequested = (event, url) => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    scrollToTop()
     this.fetchMemesData(url)
       .then(json => {
         if (!json) { return }
