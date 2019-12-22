@@ -8,12 +8,20 @@ const HOME_PAGE = {
 
 const SITES = [
   {
-    name: 'Anonimowe',
-    url: 'anonimowe'
-  },
-  {
     name: 'jbzd',
     url: 'jbzd'
+  },
+  {
+    name: 'kwejk',
+    url: 'kwejk'
+  },
+  {
+    name: 'Demotywatory',
+    url: 'demotywatory'
+  },
+  {
+    name: 'Mistrzowie',
+    url: 'mistrzowie'
   },
   {
     name: '9GAG',
@@ -24,12 +32,8 @@ const SITES = [
     url: '9gagnsfw'
   },
   {
-    name: 'Demotywatory',
-    url: 'demotywatory'
-  },
-  {
-    name: 'Mistrzowie',
-    url: 'mistrzowie'
+    name: 'Anonimowe',
+    url: 'anonimowe'
   }
 ];
 
