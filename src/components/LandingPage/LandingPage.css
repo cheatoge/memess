@@ -26,3 +26,9 @@
 .landing-authors:hover .githubMark {
   fill: #f73636;
 }
+
+@media (max-width: 380px) {
+  .landing-sites-container {
+    grid-template-columns: 100%;
+  }
+}
