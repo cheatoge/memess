@@ -4,6 +4,7 @@ import TextMeme from './TextMeme';
 import VideoMeme from './VideoMeme';
 import GalleryMeme from './GalleryMeme';
 import { ErrorWindow } from '../ErrorWindow'
+import { MemeHeader } from '../MemeHeader'
 import './Meme.css'
 
 const CONTENT_TYPES = {
@@ -46,9 +47,7 @@ class Meme extends React.Component {
 
     return (
       <div className='meme block'>
-        <a href={meme.url} target='_blank' rel="noopener noreferrer">
-          <h3 className='memeBlock memeLink'>{meme.title}</h3>
-        </a>
+        <MemeHeader href={meme.url} >{meme.title}</MemeHeader>
         {memeView != null && memeView}
         {
           meme.comment_count != null &&
