@@ -4,11 +4,9 @@ import DataButton from '../Button/DataButton.js'
 class SitePicker extends React.Component {
   render() {
     const sites = this.props.sites
-    let siteButtons = []
-
-    sites.forEach(site => {
-      siteButtons.push(
-        <DataButton 
+    let siteButtons = sites.map(site => {
+      return (
+        <DataButton
           key={site.url}
           data={site}
           onClick={this.props.onSiteSelected}
