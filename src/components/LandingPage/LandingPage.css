@@ -10,6 +10,6 @@
   text-align: center;
 }
 
-.githubMark:hover {
-  fill: red;
+.authors:hover .githubMark {
+  fill: #f73636;
 }

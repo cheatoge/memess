@@ -12,11 +12,15 @@ class LandingPage extends React.Component {
         </p>
         <p className="textBlock centerText">
           Created by <a href='https://github.com/cheatoge'>
+          <span className='authors'>
             <span style={{padding: '0 3px 0 0'}}><GithubMark fill={'#FFF'} /></span><b>cheatoge</b>
+          </span>
           </a>.
 
           Original idea by <a href='https://github.com/pr0gramista'>
+          <span className='authors'>
             <span style={{padding: '0 3px 0 0'}}><GithubMark fill={'#FFF'} /></span><b>pr0gramista</b>
+          </span>
           </a>.
         </p>
       </div>
