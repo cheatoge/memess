@@ -1,4 +1,5 @@
-import React from 'react';
+import React from 'react'
+import './MemeFooter.css'
 
 const MemeFooter = (props) => {
   let commentCount = '?'
@@ -7,10 +8,10 @@ const MemeFooter = (props) => {
   }
 
   return (
-    <div className='memeBlock memeFooter'>
+    <div className='meme-footer'>
       <span>Komentarzy: {commentCount}</span>
       <span>
-        <a href={props.source} className='memeLink' target='_blank' rel='noopener noreferrer'>
+        <a href={props.source} target='_blank' rel='noopener noreferrer'>
           Źródło
         </a>
       </span>

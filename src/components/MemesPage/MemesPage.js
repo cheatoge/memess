@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import { MemeHeader } from '../MemeHeader'
 import { MemeFooter } from '../MemeFooter'
 import { TextMeme } from '../TextMeme'
@@ -48,7 +48,7 @@ class MemesPage extends React.Component {
       }
 
       return (
-        <div key={meme.view_url} className='meme block' >
+        <div key={meme.view_url} className='meme-wrapper' >
           {header}
           {preparedContent}
           {footer}
@@ -58,8 +58,8 @@ class MemesPage extends React.Component {
 
     return (
       <div>
-        <div className='pageNameWrapper'>
-          <h2 className='pageName'>{this.props.siteName}</h2>
+        <div className='memes-page-header'>
+          <h2 className='memes-page-name'>{this.props.siteName}</h2>
         </div>
         <div>
           {wrappedMemes}

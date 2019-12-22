@@ -1,9 +1,10 @@
 import React from 'react'
+import './MemeHeader.css'
 
 const MemeHeader = (props) => {
   return (
     <a href={props.href} target='_blank' rel="noopener noreferrer">
-      <h3 className='memeHeader memeBlock memeLink'>{props.children}</h3>
+      <h3 className='meme-header'>{props.children}</h3>
     </a>
   )
 }

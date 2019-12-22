@@ -1,0 +1,7 @@
+.meme-header {
+  color: var(--color-text);
+  margin: 0;
+  display: block;
+  padding: 4px 6px;
+  color: var(--color-text);
+}

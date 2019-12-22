@@ -1,45 +1,24 @@
-.meme {
+.meme-wrapper {
+  background-color: var(--color-surface);
+  color: var(--color-text);
   margin: 0 0 30px 0;
 }
 
-.meme:last-child {
+.memeWrapper:last-child {
   margin-bottom: 0
 }
 
-.memeBlock {
-  display: block;
-  padding: 4px 6px;
-  color: var(--color-text);
-  margin: 4px 0;
-}
-
-.memeFooter {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-top: 0;
-  font-size: 0.86em;
-}
-
-.memeLink {
-  color: var(--color-text);
-}
-
-.memeLink:hover {
-  color: white;
-}
-
-.pageNameWrapper {
+.memes-page-header {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 
-.pageName {
-  color: #fff;
+.memes-page-name {
+  color: var(--color-text);
   text-transform: uppercase;
   text-decoration: none;
-  background: #BB4430;
+  background: var(--color-primary);
   padding: 5px 20px;
   display: inline-block;
   border: none;
