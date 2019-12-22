@@ -1,5 +1,6 @@
 import React from 'react';
 import GithubMark from '../SVG/GithubMark.js'
+import SitePicker from '../SitePicker/SitePicker.js'
 import './LandingPage.css'
 
 class LandingPage extends React.Component {
@@ -10,6 +11,14 @@ class LandingPage extends React.Component {
         <p className="textBlock centerText">
           Enjoy memes without loads of ads and annoying UI.
         </p>
+
+        <div className="sitesBlock">
+          <SitePicker
+            sites={this.props.sites}
+            onSiteSelected={this.props.onSiteSelected}
+          />
+        </div>
+
         <p className="textBlock centerText">
           Created by <a href='https://github.com/cheatoge'>
           <span className='authors'>

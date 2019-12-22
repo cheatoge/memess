@@ -10,6 +10,12 @@
   text-align: center;
 }
 
+.sitesBlock {
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
 .authors:hover .githubMark {
   fill: #f73636;
 }

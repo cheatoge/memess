@@ -133,7 +133,10 @@ class App extends React.Component {
         <div className="wrapper">
           {
             !this.state.site.url &&
-            <LandingPage />
+            <LandingPage
+              sites={SITES}
+              onSiteSelected={this.onSiteSelected}
+            />
           }
           {
             currentUrl.length > 0 &&
