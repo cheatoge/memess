@@ -1,21 +1,28 @@
-.landingWrapper {
- margin-top: 30px;
+.landing-wrapper {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  margin-top: 30px;
 }
 
-.textBlock {
+.landing-paragraph {
   padding: 20px;
-}
-
-.centerText {
   text-align: center;
 }
 
-.sitesBlock {
+.landing-sites-container {
   padding: 0 40px;
   display: grid;
   grid-template-columns: 50% 50%;
 }
 
-.authors:hover .githubMark {
+.landing-icon-wrapper {
+  padding: 0 3px 0 0;
+}
+
+.landing-authors:hover {
+  color: var(--color-text-active);
+}
+
+.landing-authors:hover .githubMark {
   fill: #f73636;
 }

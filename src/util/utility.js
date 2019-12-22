@@ -31,8 +31,14 @@ const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: 'smooth' })
 }
 
+const getCSSVariable = (variable) => {
+  return window
+    .getComputedStyle(document.documentElement)
+    .getPropertyValue(variable)
+}
+
 export {
   IMAGE_EXTENSIONS, VIDEO_EXTENSIONS, getExtension,
   isVideoExtension, isImageExtension, getViewportWidth,
-  scrollToTop
+  scrollToTop, getCSSVariable
 }
