@@ -23,24 +23,24 @@ class MemesPage extends React.Component {
       let preparedContent
       switch (content.contentType) {
         case 'TEXT':
-          preparedContent = <TextMeme key={meme.view_url} content={meme.content} />
+          preparedContent = <TextMeme content={meme.content} />
           break;
 
         case 'IMAGE':
-          preparedContent = <ImageMeme key={meme.view_url} content={meme.content} />
+          preparedContent = <ImageMeme content={meme.content} />
           break;
 
         case 'VIDEO':
-          preparedContent = <VideoMeme key={meme.view_url} content={meme.content} />
+          preparedContent = <VideoMeme content={meme.content} />
           break;
 
         case 'GALLERY':
-          preparedContent = <GalleryMeme key={meme.view_url} content={meme.content} />
+          preparedContent = <GalleryMeme content={meme.content} />
           break;
 
         default:
           preparedContent = (
-            <ErrorWindow key={meme.view_url} hideCloseButton={true}>
+            <ErrorWindow hideCloseButton={true}>
               Nieobsługiwany format pliku :(
             </ErrorWindow>
           )
@@ -48,7 +48,7 @@ class MemesPage extends React.Component {
       }
 
       return (
-        <div className='meme block' >
+        <div key={meme.view_url} className='meme block' >
           {header}
           {preparedContent}
           {footer}
