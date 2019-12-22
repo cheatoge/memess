@@ -1,7 +1,7 @@
-import React from 'react';
-import ImageMeme from './ImageMeme';
-import VideoMeme from './VideoMeme';
-import { getExtension, isVideoExtension, isImageExtension } from '../../util/utility';
+import React from 'react'
+import { ImageMeme } from '../ImageMeme'
+import { VideoMeme } from '../VideoMeme'
+import { getExtension, isVideoExtension, isImageExtension } from '../../util/utility'
 import './GalleryMeme.css'
 
 class GalleryMeme extends React.Component {
@@ -14,7 +14,7 @@ class GalleryMeme extends React.Component {
 
   nextMeme = () => {
     this.setState((state) => {
-      const nextIndex = state.urlIndex === this.props.urls.length - 1 ? 0 : state.urlIndex + 1
+      const nextIndex = state.urlIndex === this.props.content.urls.length - 1 ? 0 : state.urlIndex + 1
 
       return { urlIndex: nextIndex }
     })
@@ -22,19 +22,19 @@ class GalleryMeme extends React.Component {
 
   previousMeme = () => {
     this.setState((state) => {
-      const nextIndex = state.urlIndex === 0 ? this.props.urls.length - 1 : state.urlIndex - 1
+      const nextIndex = state.urlIndex === 0 ? this.props.content.urls.length - 1 : state.urlIndex - 1
 
       return { urlIndex: nextIndex }
     })
   }
 
   render() {
-    let memes = this.props.urls.map(url => {
+    let memes = this.props.content.urls.map(url => {
       const extension = getExtension(url)
       if (isImageExtension(extension)) {
-        return <ImageMeme key={url} url={url} />
+        return <ImageMeme key={url} content={{ url: url }} />
       } else if (isVideoExtension(extension)) {
-        return <VideoMeme key={url} url={url} />
+        return <VideoMeme key={url} content={{ url: url }} />
       } else {
         return <p key={url}>Unsupported extension :(</p>
       }
@@ -52,4 +52,4 @@ class GalleryMeme extends React.Component {
   }
 }
 
-export default GalleryMeme
+export { GalleryMeme }

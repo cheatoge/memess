@@ -157,10 +157,9 @@ class App extends React.Component {
           }
           {
             this.state.error != null &&
-            <ErrorWindow
-              error={this.state.error}
-              onClick={this.clearError}
-            />
+            <ErrorWindow onClick={this.clearError}>
+              {this.state.error}
+            </ErrorWindow>
           }
         </div>
         <HamburgerMenu onClick={this.toggleSideBar} />
