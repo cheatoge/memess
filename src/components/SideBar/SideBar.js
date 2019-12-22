@@ -1,5 +1,5 @@
 import React from 'react';
-import SitePicker from '../SitePicker/SitePicker.js'
+import { SitePicker } from '../SitePicker'
 import './SideBar.css'
 
 class SideBar extends React.Component {

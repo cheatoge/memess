@@ -1,6 +1,6 @@
 import React from 'react';
 import GithubMark from '../SVG/GithubMark.js'
-import SitePicker from '../SitePicker/SitePicker.js'
+import { SitePicker } from '../SitePicker'
 import './LandingPage.css'
 
 class LandingPage extends React.Component {
