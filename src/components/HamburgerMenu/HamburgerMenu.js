@@ -8,11 +8,11 @@ class HamburgerMenu extends React.Component {
 
   render() {
     return (
-      <button className='hamburgerMenu shadow' onClick={this.handleClick}>
+      <button className='hamburger-menu .hamburger-menu-shadow' onClick={this.handleClick}>
         <div>
-          <div className='hamburgerBar'></div>
-          <div className='hamburgerBar'></div>
-          <div className='hamburgerBar'></div>
+          <div className='hamburger-menu-bar'></div>
+          <div className='hamburger-menu-bar'></div>
+          <div className='hamburger-menu-bar'></div>
         </div>
       </button>
     )
