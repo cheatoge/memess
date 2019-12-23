@@ -1,4 +1,4 @@
-const API_URL = 'http://api.12345.pl'
+const API_URL = 'https://api.12345.pl'
 const DESKTOP_VIEWPORT_SIZE = 800
 
 const HOME_PAGE = {
