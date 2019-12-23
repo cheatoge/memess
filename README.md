@@ -1,5 +1,8 @@
 # Memess
 
+## Check it out!
+You can try out the app [here](https://memess-cheatoge.web.app/).
+
 ## What it is?
 
 Memess app was created to browse popular meme sites without popping ads and stinky UI.<br />
