@@ -1,5 +1,5 @@
 .data-button {
-  color: var(--color-text); 
+  color: var(--color-text);
   text-transform: uppercase;
   text-decoration: none;
   background: var(--color-primary);

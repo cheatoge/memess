@@ -1,5 +1,5 @@
 :root {
-  --color-background: #231F20;
+  --color-background: #231f20;
   --color-surface: #40393c;
   --color-text: #eee;
   --color-text-active: #fff;
@@ -41,7 +41,7 @@ body {
 }
 
 .button {
-  color: var(--color-text); 
+  color: var(--color-text);
   text-transform: uppercase;
   text-decoration: none;
   background: var(--color-primary);
@@ -60,7 +60,7 @@ body {
 .next-page-wrapper {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end
+  justify-content: flex-end;
 }
 
 .error-container {

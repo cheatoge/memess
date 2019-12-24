@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import { DataButton } from '../DataButton'
 
 class SitePicker extends React.Component {
@@ -15,11 +15,7 @@ class SitePicker extends React.Component {
       )
     })
 
-    return (
-      <>
-        {siteButtons}
-      </>
-    )
+    return <>{siteButtons}</>
   }
 }
 

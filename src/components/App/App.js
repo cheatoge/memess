@@ -7,7 +7,7 @@ import { HamburgerMenu } from '../HamburgerMenu'
 import { ErrorWindow } from '../ErrorWindow'
 import { API_URL, HOME_PAGE, SITES, DESKTOP_VIEWPORT_SIZE } from './Config'
 import { getViewportWidth, scrollToTop } from '../../util/utility.js'
-import './App.css';
+import './App.css'
 
 class App extends React.Component {
   constructor(props) {
@@ -38,17 +38,18 @@ class App extends React.Component {
     })
   }
 
-  onFetchError = (error) => {
+  onFetchError = error => {
     this.setState({ error: 'Wystąpił błąd podczas pobierania memów' })
     console.log(error)
   }
 
-  fetchMemesData = async (url) => {
+  fetchMemesData = async url => {
     const memesUrl = `${API_URL}/${url}`
     const json = await fetch(memesUrl)
       .then(response => {
         return response.json()
-      }).catch(this.onFetchError)
+      })
+      .catch(this.onFetchError)
 
     if (!json || !json.memes) {
       this.onFetchError('Invalid JSON response')
@@ -65,18 +66,19 @@ class App extends React.Component {
     })
   }
 
-  onMemesSiteSelected = (site) => {
-    this.fetchMemesData(site.url)
-      .then(json => {
-        if (!json) { return }
+  onMemesSiteSelected = site => {
+    this.fetchMemesData(site.url).then(json => {
+      if (!json) {
+        return
+      }
 
-        scrollToTop()
-        this.setState({
-          site: site,
-          memes: json.memes,
-          nextPageUrl: json.next_page_url
-        })
+      scrollToTop()
+      this.setState({
+        site: site,
+        memes: json.memes,
+        nextPageUrl: json.next_page_url
       })
+    })
   }
 
   onSiteSelected = (event, site) => {
@@ -92,16 +94,17 @@ class App extends React.Component {
   }
 
   onNextPageRequested = (event, url) => {
-    this.fetchMemesData(url)
-      .then(json => {
-        if (!json) { return }
+    this.fetchMemesData(url).then(json => {
+      if (!json) {
+        return
+      }
 
-        scrollToTop()
-        this.setState({
-          memes: json.memes,
-          nextPageUrl: json.next_page_url
-        })
+      scrollToTop()
+      this.setState({
+        memes: json.memes,
+        nextPageUrl: json.next_page_url
       })
+    })
   }
 
   toggleSideBar = () => {
@@ -121,22 +124,16 @@ class App extends React.Component {
     return (
       <>
         <div className="wrapper">
-          {
-            !this.state.site.url &&
-            <LandingPage
-              sites={SITES}
-              onSiteSelected={this.onSiteSelected}
-            />
-          }
-          {
-            currentUrl.length > 0 &&
+          {!this.state.site.url && (
+            <LandingPage sites={SITES} onSiteSelected={this.onSiteSelected} />
+          )}
+          {currentUrl.length > 0 && (
             <MemesPage
               memes={this.state.memes}
               siteName={this.state.site.name}
             />
-          }
-          {
-            nextPageUrl != null &&
+          )}
+          {nextPageUrl != null && (
             <div className="next-page-wrapper">
               <DataButton
                 text="Następna strona"
@@ -144,28 +141,26 @@ class App extends React.Component {
                 data={this.state.nextPageUrl}
               />
             </div>
-          }
-          {
-            this.state.error != null &&
-            <div className='error-container'>
+          )}
+          {this.state.error != null && (
+            <div className="error-container">
               <ErrorWindow onClick={this.clearError}>
                 {this.state.error}
               </ErrorWindow>
             </div>
-          }
+          )}
         </div>
-        {
-          this.state.showSideBar &&
+        {this.state.showSideBar && (
           <SideBar
             sites={[HOME_PAGE, ...SITES]}
             onSiteSelected={this.onSiteSelected}
             onBackgroundClick={this.toggleSideBar}
           />
-        }
+        )}
         <HamburgerMenu onClick={this.toggleSideBar} />
       </>
     )
   }
 }
 
-export default App;
+export default App
