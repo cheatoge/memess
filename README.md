@@ -10,6 +10,13 @@ It's using [memes-api](https://github.com/pr0gramista/memes-api) to recive meme 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Code style
+
+Your code should be automatically reformated after commit using Prettier.<br />
+Formatter is configured for single quotes and no semicolons.<br />
+
+You can also install Prettier extension for your IDE to see the output before commiting.
+
 ## Available Scripts
 
 In the project directory, you can run:
