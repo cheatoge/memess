@@ -4,7 +4,7 @@ const DESKTOP_VIEWPORT_SIZE = 800
 const HOME_PAGE = {
   name: 'Strona główna',
   url: ''
-};
+}
 
 const SITES = [
   {
@@ -35,6 +35,6 @@ const SITES = [
     name: 'Anonimowe',
     url: 'anonimowe'
   }
-];
+]
 
 export { API_URL, DESKTOP_VIEWPORT_SIZE, HOME_PAGE, SITES }

@@ -2,7 +2,11 @@ import React from 'react'
 import { ImageMeme } from '../ImageMeme'
 import { VideoMeme } from '../VideoMeme'
 import { ErrorWindow } from '../ErrorWindow'
-import { getExtension, isVideoExtension, isImageExtension } from '../../util/utility'
+import {
+  getExtension,
+  isVideoExtension,
+  isImageExtension
+} from '../../util/utility'
 import './GalleryMeme.css'
 
 class GalleryMeme extends React.Component {
@@ -14,16 +18,22 @@ class GalleryMeme extends React.Component {
   }
 
   nextMeme = () => {
-    this.setState((state) => {
-      const nextIndex = state.urlIndex === this.props.content.urls.length - 1 ? 0 : state.urlIndex + 1
+    this.setState(state => {
+      const nextIndex =
+        state.urlIndex === this.props.content.urls.length - 1
+          ? 0
+          : state.urlIndex + 1
 
       return { urlIndex: nextIndex }
     })
   }
 
   previousMeme = () => {
-    this.setState((state) => {
-      const nextIndex = state.urlIndex === 0 ? this.props.content.urls.length - 1 : state.urlIndex - 1
+    this.setState(state => {
+      const nextIndex =
+        state.urlIndex === 0
+          ? this.props.content.urls.length - 1
+          : state.urlIndex - 1
 
       return { urlIndex: nextIndex }
     })
@@ -48,9 +58,13 @@ class GalleryMeme extends React.Component {
     return (
       <div>
         {memes[this.state.urlIndex]}
-        <div className='gallery-nav'>
-          <button className='button gallery-button' onClick={this.previousMeme}><b>{'<'}</b> Poprzedni</button>
-          <button className='button gallery-button' onClick={this.nextMeme}>Następny <b>{'>'}</b></button>
+        <div className="gallery-nav">
+          <button className="button gallery-button" onClick={this.previousMeme}>
+            <b>{'<'}</b> Poprzedni
+          </button>
+          <button className="button gallery-button" onClick={this.nextMeme}>
+            Następny <b>{'>'}</b>
+          </button>
         </div>
       </div>
     )

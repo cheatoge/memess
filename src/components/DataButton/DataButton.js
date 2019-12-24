@@ -1,14 +1,14 @@
-import React from 'react';
+import React from 'react'
 import './DataButton.css'
 
 class DataButton extends React.Component {
-  handleClick = (event) => {
+  handleClick = event => {
     this.props.onClick(event, this.props.data)
   }
 
   render() {
     return (
-      <button className='data-button' onClick={this.handleClick}>
+      <button className="data-button" onClick={this.handleClick}>
         {this.props.text}
       </button>
     )
