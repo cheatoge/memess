@@ -10,8 +10,9 @@ class SitePicker extends React.Component {
           key={site.url}
           data={site}
           onClick={this.props.onSiteSelected}
-          text={site.name}
-        />
+        >
+          {site.name}
+        </DataButton>
       )
     })
 
