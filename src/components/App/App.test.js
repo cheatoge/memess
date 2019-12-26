@@ -1,9 +1,15 @@
 import React from 'react'
-import { render } from '@testing-library/react'
+import { render, cleanup } from '@testing-library/react'
+import { HOME_PAGE, SITES } from './Config.js'
 import App from './App'
 
-// test('renders learn react link', () => {
-//   const { getByText } = render(<App />);
-//   const linkElement = getByText(/learn react/i);
-//   expect(linkElement).toBeInTheDocument();
-// });
+afterEach(cleanup)
+
+it('renders without crashing', () => {
+  render(<App />)
+})
+
+it('is displays main page', () => {
+  const { getByText } = render(<App />)
+  expect(getByText(/enjoy memes/i)).toBeInTheDocument()
+})
