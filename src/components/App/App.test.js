@@ -1,6 +1,5 @@
 import React from 'react'
 import { render, cleanup } from '@testing-library/react'
-import { HOME_PAGE, SITES } from './Config.js'
 import App from './App'
 
 afterEach(cleanup)
