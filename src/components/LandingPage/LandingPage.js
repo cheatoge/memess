@@ -13,7 +13,10 @@ class LandingPage extends React.Component {
           Enjoy memes without loads of ads and annoying UI.
         </p>
 
-        <div className="landing-sites-container">
+        <div
+          data-testid="landing-sites-container"
+          className="landing-sites-container"
+        >
           <SitePicker
             sites={this.props.sites}
             onSiteSelected={this.props.onSiteSelected}
