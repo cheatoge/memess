@@ -3,15 +3,20 @@ import { DataButton } from '../DataButton'
 
 class SitePicker extends React.Component {
   render() {
-    const sites = this.props.sites
+    const { sites } = this.props
+    if (!sites) {
+      return <></>
+    }
+
     let siteButtons = sites.map(site => {
       return (
         <DataButton
           key={site.url}
           data={site}
           onClick={this.props.onSiteSelected}
-          text={site.name}
-        />
+        >
+          {site.name}
+        </DataButton>
       )
     })
 

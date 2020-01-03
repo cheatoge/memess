@@ -5,7 +5,7 @@ const VIDEO_EXTENSIONS = ['mp4']
 // Takes path or url as argument
 const getExtension = path => {
   const lastDotIndex = path.lastIndexOf('.')
-  if (!lastDotIndex) {
+  if (lastDotIndex < 0) {
     return
   }
 

@@ -9,7 +9,7 @@ class DataButton extends React.Component {
   render() {
     return (
       <button className="data-button" onClick={this.handleClick}>
-        {this.props.text}
+        {this.props.children}
       </button>
     )
   }

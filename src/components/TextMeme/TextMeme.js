@@ -2,7 +2,7 @@ import React from 'react'
 import './TextMeme.css'
 
 const TextMeme = props => {
-  const content = props.content
+  const { content } = props
   let textSections = content.text.split('\n')
   textSections = textSections.map((section, index) => {
     return (

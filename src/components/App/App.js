@@ -136,10 +136,11 @@ class App extends React.Component {
           {nextPageUrl != null && (
             <div className="next-page-wrapper">
               <DataButton
-                text="Następna strona"
                 onClick={this.onNextPageRequested}
                 data={this.state.nextPageUrl}
-              />
+              >
+                Następna strona
+              </DataButton>
             </div>
           )}
           {this.state.error != null && (

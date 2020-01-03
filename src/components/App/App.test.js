@@ -1,9 +1,21 @@
 import React from 'react'
-import { render } from '@testing-library/react'
+import { render, cleanup } from '@testing-library/react'
 import App from './App'
+import { SITES } from './Config'
 
-// test('renders learn react link', () => {
-//   const { getByText } = render(<App />);
-//   const linkElement = getByText(/learn react/i);
-//   expect(linkElement).toBeInTheDocument();
-// });
+afterEach(cleanup)
+
+it('renders without crashing', () => {
+  render(<App />)
+})
+
+it('is displays main page', () => {
+  const { getByText } = render(<App />)
+  expect(getByText(/enjoy memes/i)).toBeInTheDocument()
+})
+
+it('renders buttons in navigation and main page', () => {
+  const { queryAllByText } = render(<App />)
+  const textSiteButtons = queryAllByText(/anonimowe/i)
+  expect(textSiteButtons.length).toBe(2)
+})
